@@ -14,7 +14,7 @@ use indicatif::{ProgressBar, ProgressStyle};
 
 use crate::api::{clean_host, create_client, fetch_target_geo, parse_results, poll_check_results, start_check};
 use crate::config::{get_saved_language, load_config, save_language};
-use crate::installer::{ensure_installed, install_to_appdata};
+use crate::installer::{ensure_installed, install_to_appdata, uninstall};
 use crate::models::CheckType;
 use crate::ui::{calculate_stats, render_header, render_nodes_table, select_language_interactive, select_post_action_interactive, PostCheckAction};
 use crate::updater::{check_for_update, clean_old_binary, download_and_apply_update, find_matching_asset, prompt_update_interactive};
@@ -42,6 +42,9 @@ struct Cli {
 
     #[arg(long = "install")]
     install: bool,
+
+    #[arg(long = "uninstall")]
+    uninstall: bool,
 }
 
 #[tokio::main]
@@ -49,23 +52,35 @@ async fn main() {
     #[cfg(windows)]
     let _ = colored::control::set_virtual_terminal(true);
 
-    clean_old_binary();
-    ensure_installed();
-
     let cli = Cli::parse();
 
-    if cli.install {
-        match install_to_appdata() {
-            Ok(path) => {
-                println!("✔ Успешно установлено в {}", path.display());
-                println!("✔ Команда 'ping' перенаправлена на yawcp");
+    if cli.uninstall {
+        match uninstall() {
+            Ok(_) => {
+                println!("✔");
             }
             Err(e) => {
-                eprintln!("❌ Ошибка установки: {}", e);
+                eprintln!("❌: {}", e);
             }
         }
         return;
     }
+
+    if cli.install {
+        match install_to_appdata() {
+            Ok(path) => {
+                println!("✔ {}", path.display());
+                println!("✔ ");
+            }
+            Err(e) => {
+                eprintln!("❌ : {}", e);
+            }
+        }
+        return;
+    }
+
+    clean_old_binary();
+    ensure_installed();
 
     let lang = match cli.lang {
         Some(l) => l,
