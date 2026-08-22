@@ -8,7 +8,14 @@ Checking availability via check-host using the "ping google.com" command.
 ## Installing
 
 ```javascript
+Windows install:
 yawcp.exe --install
+
+Linux run:
+
+chmod +x yawcp
+./yawcp
+
 ```
 
 
