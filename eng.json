@@ -1,0 +1,85 @@
+{
+  "prompts": {
+    "target_prompt": "Domain / IP > ",
+    "port_prompt": "Port [default {}]: ",
+    "check_type_title": "  Check type: ",
+    "menu_ping": "PING",
+    "menu_tcp": "TCP PORT",
+    "menu_udp": "UDP PORT",
+    "menu_dns": "DNS"
+  },
+  "spinners": {
+    "starting": "Sending request to check-host.net [{type}] {target}...",
+    "polling_init": "Polling (0/{total})...",
+    "polling": "Fetching results: {completed}/{total} completed..."
+  },
+  "header": {
+    "status_title": "Status:",
+    "status_online": "ONLINE",
+    "status_offline": "OFFLINE",
+    "status_partial": "PARTIALLY ONLINE",
+    "ping_label": "PING:",
+    "rating_excellent": "[Excellent]",
+    "rating_good": "[Good]",
+    "rating_medium": "[Medium]",
+    "rating_high": "[High]",
+    "tcp_tested": "[Tested]",
+    "dns_ok_badge": "[Records received]",
+    "dns_fail_badge": "[Error]",
+    "unknown_country": "Unknown"
+  },
+  "table": {
+    "col_location": "Location",
+    "col_status": "Status",
+    "col_ping": "Ping",
+    "col_response_time": "Response",
+    "col_ttl": "TTL",
+    "col_packets": "Packets",
+    "col_ip_address": "IP",
+    "col_dns_records": "Records (A / AAAA)",
+    "badge_checking": "CHECKING...",
+    "badge_ok": "OK",
+    "badge_packet_loss": "LOSS",
+    "badge_timeout": "TIMEOUT",
+    "badge_dns_fail": "DNS FAIL",
+    "badge_open": "OPEN",
+    "badge_closed": "CLOSED",
+    "badge_dns_ok": "DNS OK",
+    "badge_nxdomain": "NXDOMAIN",
+    "msg_dns_error": "DNS Error",
+    "msg_no_records": "No records found",
+    "msg_waiting": "Waiting...",
+    "msg_success": "Success",
+    "msg_error": "Error",
+    "placeholder_empty": "—"
+  },
+  "buttons": {
+    "open_report": "OPEN REPORT",
+    "to_menu": "TO MENU",
+    "retry": "RETRY",
+    "close": "CLOSE",
+    "opened_badge": "Opened in browser"
+  },
+  "errors": {
+    "no_target": "Error: target not specified.",
+    "invalid_host": "Error: invalid host address.",
+    "init_check_failed": "Check initialization error:",
+    "connection_failed": "Connection to check-host.net failed:",
+    "http_status_error": "Check-Host returned HTTP status",
+    "json_parse_error": "Error parsing Check-Host response:",
+    "no_request_id": "Check-Host did not return a request_id",
+    "poll_failed": "Error fetching check results:",
+    "unknown_type_warning": "Unknown type '{}', using PING."
+  },
+  "updater": {
+    "github_repo": "owner/yawcp",
+    "update_available_title": "🚀 Update available: {} → {}",
+    "changelog_title": "📋 Changelog:",
+    "btn_update": "UPDATE NOW",
+    "btn_skip": "CONTINUE",
+    "downloading": "Downloading update...",
+    "update_success": "✔ Successfully updated! Please restart yawcp.",
+    "update_failed": "❌ Failed to update:",
+    "no_asset_found": "Update binary for your OS was not found in release."
+  }
+}

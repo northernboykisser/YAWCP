@@ -1,0 +1,85 @@
+{
+  "prompts": {
+    "target_prompt": "Домен / IP > ",
+    "port_prompt": "Порт [по умолчанию {}]: ",
+    "check_type_title": "  Тип проверки: ",
+    "menu_ping": "PING",
+    "menu_tcp": "TCP PORT",
+    "menu_udp": "UDP PORT",
+    "menu_dns": "DNS"
+  },
+  "spinners": {
+    "starting": "Отправка запроса на check-host.net [{type}] {target}...",
+    "polling_init": "Опрос (0/{total})...",
+    "polling": "Получение результатов: {completed}/{total} завершено..."
+  },
+  "header": {
+    "status_title": "Статус:",
+    "status_online": "ДОСТУПЕН",
+    "status_offline": "НЕДОСТУПЕН",
+    "status_partial": "ЧАСТИЧНО ДОСТУПЕН",
+    "ping_label": "PING:",
+    "rating_excellent": "[Отличный]",
+    "rating_good": "[Хороший]",
+    "rating_medium": "[Средний]",
+    "rating_high": "[Высокий]",
+    "tcp_tested": "[Проверено]",
+    "dns_ok_badge": "[Записи получены]",
+    "dns_fail_badge": "[Ошибка]",
+    "unknown_country": "Неизвестно"
+  },
+  "table": {
+    "col_location": "Локация",
+    "col_status": "Статус",
+    "col_ping": "Пинг",
+    "col_response_time": "Ответ",
+    "col_ttl": "TTL",
+    "col_packets": "Пакеты",
+    "col_ip_address": "IP",
+    "col_dns_records": "Записи (A / AAAA)",
+    "badge_checking": "ПРОВЕРКА...",
+    "badge_ok": "OK",
+    "badge_packet_loss": "ПОТЕРИ",
+    "badge_timeout": "TIMEOUT",
+    "badge_dns_fail": "DNS FAIL",
+    "badge_open": "OPEN",
+    "badge_closed": "CLOSED",
+    "badge_dns_ok": "DNS OK",
+    "badge_nxdomain": "NXDOMAIN",
+    "msg_dns_error": "Ошибка DNS",
+    "msg_no_records": "Записи не найдены",
+    "msg_waiting": "Ожидание...",
+    "msg_success": "Успешно",
+    "msg_error": "Ошибка",
+    "placeholder_empty": "—"
+  },
+  "buttons": {
+    "open_report": "ОТКРЫТЬ ОТЧЕТ",
+    "to_menu": "В МЕНЮ",
+    "retry": "ПОПРОБОВАТЬ ЕЩЕ РАЗ",
+    "close": "ЗАКРЫТЬ",
+    "opened_badge": "Открыто в браузере"
+  },
+  "errors": {
+    "no_target": "Ошибка: цель не указана.",
+    "invalid_host": "Ошибка: некорректный адрес хоста.",
+    "init_check_failed": "Ошибка инициализации проверки:",
+    "connection_failed": "Ошибка подключения к check-host.net:",
+    "http_status_error": "Check-Host вернул статус HTTP",
+    "json_parse_error": "Ошибка парсинга ответа Check-Host:",
+    "no_request_id": "Check-Host не вернул request_id",
+    "poll_failed": "Ошибка получения результатов проверки:",
+    "unknown_type_warning": "Неизвестный тип '{}', используется PING."
+  },
+  "updater": {
+    "github_repo": "owner/yawcp",
+    "update_available_title": "🚀 Доступно обновление: {} → {}",
+    "changelog_title": "📋 Список изменений (Changelog):",
+    "btn_update": "ОБНОВИТЬ СЕЙЧАС",
+    "btn_skip": "ПРОДОЛЖИТЬ",
+    "downloading": "Загрузка обновления...",
+    "update_success": "✔ Программа успешно обновлена! Перезапустите yawcp.",
+    "update_failed": "❌ Не удалось обновить программу:",
+    "no_asset_found": "Файл обновления для вашей ОС не найден в релизе."
+  }
+}
