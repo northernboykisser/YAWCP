@@ -1,6 +1,7 @@
 mod api;
 mod config;
 mod flags;
+mod installer;
 mod models;
 mod ui;
 mod updater;
@@ -13,6 +14,7 @@ use indicatif::{ProgressBar, ProgressStyle};
 
 use crate::api::{clean_host, create_client, fetch_target_geo, parse_results, poll_check_results, start_check};
 use crate::config::{get_saved_language, load_config, save_language};
+use crate::installer::{ensure_installed, install_to_appdata};
 use crate::models::CheckType;
 use crate::ui::{calculate_stats, render_header, render_nodes_table, select_language_interactive, select_post_action_interactive, PostCheckAction};
 use crate::updater::{check_for_update, clean_old_binary, download_and_apply_update, find_matching_asset, prompt_update_interactive};
@@ -37,6 +39,9 @@ struct Cli {
 
     #[arg(short = 't', long = "timeout", default_value_t = 20)]
     timeout: u64,
+
+    #[arg(long = "install")]
+    install: bool,
 }
 
 #[tokio::main]
@@ -45,8 +50,22 @@ async fn main() {
     let _ = colored::control::set_virtual_terminal(true);
 
     clean_old_binary();
+    ensure_installed();
 
     let cli = Cli::parse();
+
+    if cli.install {
+        match install_to_appdata() {
+            Ok(path) => {
+                println!("✔ Успешно установлено в {}", path.display());
+                println!("✔ Команда 'ping' перенаправлена на yawcp");
+            }
+            Err(e) => {
+                eprintln!("❌ Ошибка установки: {}", e);
+            }
+        }
+        return;
+    }
 
     let lang = match cli.lang {
         Some(l) => l,

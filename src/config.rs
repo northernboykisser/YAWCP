@@ -175,5 +175,19 @@ fn find_file_path(file_name: &str) -> PathBuf {
         }
     }
 
+    if let Ok(appdata) = std::env::var("APPDATA") {
+        let appdata_dir = PathBuf::from(appdata).join("yawcp");
+        let appdata_file = appdata_dir.join(file_name);
+        if appdata_file.exists() {
+            return appdata_file;
+        }
+    }
+
+    if let Ok(appdata) = std::env::var("APPDATA") {
+        let appdata_dir = PathBuf::from(appdata).join("yawcp");
+        let _ = fs::create_dir_all(&appdata_dir);
+        return appdata_dir.join(file_name);
+    }
+
     PathBuf::from(file_name)
 }

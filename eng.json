@@ -72,14 +72,14 @@
     "unknown_type_warning": "Unknown type '{}', using PING."
   },
   "updater": {
-    "github_repo": "owner/yawcp",
-    "update_available_title": "🚀 Update available: {} → {}",
-    "changelog_title": "📋 Changelog:",
+    "github_repo": "northernboykisser/YAWCP",
+    "update_available_title": "Update available: {} → {}",
+    "changelog_title": "Changelog:",
     "btn_update": "UPDATE NOW",
     "btn_skip": "CONTINUE",
     "downloading": "Downloading update...",
-    "update_success": "✔ Successfully updated! Please restart yawcp.",
-    "update_failed": "❌ Failed to update:",
+    "update_success": "Restart yawcp.",
+    "update_failed": "Failed to update:",
     "no_asset_found": "Update binary for your OS was not found in release."
   }
 }

@@ -72,14 +72,14 @@
     "unknown_type_warning": "Неизвестный тип '{}', используется PING."
   },
   "updater": {
-    "github_repo": "owner/yawcp",
-    "update_available_title": "🚀 Доступно обновление: {} → {}",
-    "changelog_title": "📋 Список изменений (Changelog):",
+    "github_repo": "northernboykisser/YAWCP",
+    "update_available_title": "Доступно обновление: {} → {}",
+    "changelog_title": "Changelog:",
     "btn_update": "ОБНОВИТЬ СЕЙЧАС",
     "btn_skip": "ПРОДОЛЖИТЬ",
     "downloading": "Загрузка обновления...",
-    "update_success": "✔ Программа успешно обновлена! Перезапустите yawcp.",
-    "update_failed": "❌ Не удалось обновить программу:",
+    "update_success": "Перезапустите yawcp.",
+    "update_failed": "Не удалось обновить:",
     "no_asset_found": "Файл обновления для вашей ОС не найден в релизе."
   }
 }
