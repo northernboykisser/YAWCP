@@ -21,5 +21,5 @@ chmod +x yawcp
 
 ## Screenshots
 
-![App Screenshot](https://github.com/northernboykisser/YAWCP/yawcp.png)
+![App Screenshot](https://github.com/northernboykisser/YAWCP/blob/master/yawcp.png?raw=true)
 
